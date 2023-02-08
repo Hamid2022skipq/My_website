@@ -4,16 +4,12 @@
   box-sizing: border-box;
   font-family: "Poppins";
 }
-.font_tit {
-  font-family: "Titillium Web", "Open Sans", "Helvetica Neue", sans-serif;
-}
 .color {
   color: #ff3300;
 }
-.bg_color {
-  background-color: #ff3300;
+.point {
+  cursor: pointer;
 }
-
 .hover-underline-animation {
   display: inline-block;
   position: relative;
@@ -27,14 +23,12 @@ a {
   left: 0;
   width: 100%;
 }
-
 .navbar-scrolled {
   position: fixed;
   top: -70px;
   left: 0;
   width: 100%;
 }
-
 .hover-underline-animation::after {
   content: "";
   position: absolute;
@@ -47,12 +41,10 @@ a {
   transform-origin: bottom right;
   transition: transform 0.3s ease-out;
 }
-
 .hover-underline-animation:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
-
 /* effect-shine */
 a.effect-shine:hover {
   -webkit-mask-image: linear-gradient(
@@ -79,7 +71,6 @@ a.effect-shine:hover {
   background-size: cover;
   position: relative;
 }
-
 /* Shape Divider */
 .custom-shape-divider-top-1674587749 {
   position: absolute;
@@ -89,7 +80,6 @@ a.effect-shine:hover {
   overflow: hidden;
   line-height: 0;
 }
-
 .custom-shape-divider-top-1674587749 svg {
   position: relative;
   display: block;
@@ -97,11 +87,9 @@ a.effect-shine:hover {
   height: 20px;
   transform: rotateY(180deg);
 }
-
 .custom-shape-divider-top-1674587749 .shape-fill {
   fill: #f09307;
 }
-
 /** shape divider for mobiles **/
 @media (max-width: 767px) {
   .custom-shape-divider-top-1674587749 svg {
@@ -117,7 +105,6 @@ a.effect-shine:hover {
   font-family: sans-serif;
   position: relative;
 }
-
 .container1 div {
   position: absolute;
   left: 0;
@@ -126,7 +113,6 @@ a.effect-shine:hover {
   display: block;
   text-align: center;
 }
-
 .upper {
   top: 0;
   height: 52.5%;
@@ -136,7 +122,6 @@ a.effect-shine:hover {
   animation: moveUp 1.5s ease-in-out 1;
   background-color: #010101;
 }
-
 .lower {
   bottom: 0;
   height: 100%;
@@ -147,7 +132,6 @@ a.effect-shine:hover {
   z-index: 1;
   animation: moveDown 1.5s ease-in-out 1;
 }
-
 .inside {
   position: absolute;
   top: 40%;
@@ -157,51 +141,42 @@ a.effect-shine:hover {
   font-size: 1rem;
   color: #dc143c;
 }
-
 @keyframes moveUp {
   0%,
   100% {
     top: 0;
   }
-
   50%,
   70% {
     top: -45px;
   }
 }
-
 @keyframes moveDown {
   0%,
   100% {
     top: 0;
   }
-
   50%,
   70% {
     top: 30px;
   }
 }
-
 @media (max-width: 424px) {
   .container1 {
     font-size: 2rem;
   }
-
   .inside {
     font-size: 0.75rem;
   }
 }
-
 @media (max-width: 320px) {
   .container1 {
     font-size: 1.5rem;
   }
-
   .inside {
     font-size: 0.5rem;
   }
 }
-
 /* Skill Animation */
 @import url("https://fonts.googleapis.com/css?family=Cairo");
 .title1 {
@@ -216,7 +191,6 @@ a.effect-shine:hover {
   letter-spacing: 1px;
   line-height: 2;
 }
-
 .Skill_ani {
   background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
   background-size: cover;
@@ -229,7 +203,6 @@ a.effect-shine:hover {
   font-weight: bolder;
 }
 /* styling my button */
-
 .white-mode {
   text-decoration: none;
   padding: 7px 10px;
@@ -242,12 +215,10 @@ a.effect-shine:hover {
   bottom: 15px;
   font-family: "Montserrat";
 }
-
 .white-mode:hover {
   background-color: gold;
   color: #122;
 }
-
 /* skill image */
 .skills {
   background-image: url("../img/pexels-content-pixie-2967810.jpg");
@@ -259,7 +230,6 @@ a.effect-shine:hover {
   justify-content: center;
   align-items: center;
 }
-
 /* Media Queries */
 @media (max-width: 480px) {
   .main_img {
@@ -400,9 +370,7 @@ a.effect-shine:hover {
     height: 400px;
   }
 }
-
 /* Weahter App Css */
-
 input:focus {
   outline: none;
 }
@@ -411,8 +379,6 @@ input:focus {
   display: flex;
   align-items: center;
 }
-
 .weather img {
   height: 92px;
 }
-/* map Setting */

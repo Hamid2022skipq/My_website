@@ -1,18 +1,18 @@
-// Alert for mobile device
-var width = window.innerWidth;
-function devicewidth() {
-  if (width <= 480) {
-    document.getElementById(
-      "alert"
-    ).innerHTML = `<div class="alert  mb-0 border-white alert-warning alert-dismissible fade show" role="alert">
-    <strong>&#128075;, </strong><span class='fs-6'> Optimal viewing on a tablet, laptop, or PC. Click 'cross' on your device too. </span>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>`;
-  } else {
-    document.getElementById("alert").innerHTML = `<div class='m-0 p-0'></div>`;
-  }
-}
-devicewidth();
+// // Alert for mobile device
+// var width = window.innerWidth;
+// function devicewidth() {
+//   if (width <= 480) {
+//     document.getElementById(
+//       "alert"
+//     ).innerHTML = `<div class="alert  mb-0 border-white alert-warning alert-dismissible fade show" role="alert">
+//     <strong>&#128075;, </strong><span class='fs-6'> Optimal viewing on a tablet, laptop, or PC. Click 'cross' on your device too. </span>
+//     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+//   </div>`;
+//   } else {
+//     document.getElementById("alert").innerHTML = `<div class='m-0 p-0'></div>`;
+//   }
+// }
+// devicewidth();
 
 document.getElementById("icon").onclick = function () {
   this.classList.toggle("navbar-toggler-icon");
@@ -40,7 +40,6 @@ async function getWeatherByLocation(city) {
   // console.log(Data);
   return addWeatherToPage(Data);
 }
-
 const addWeatherToPage = (data) => {
   const temp = Ktoc(data?.main?.temp);
   const temp1 = Ktoc(data?.main?.temp_max);
@@ -62,13 +61,12 @@ const addWeatherToPage = (data) => {
     return;
   }
   weather.innerHTML = `
-  <div class='d-flex flex-column justify-content-between align-items-center'>
+          <div class='d-flex flex-column justify-content-between align-items-center'>
           <h2 class='d-flex text-white justify-content-center align-items-center mt-5'>
           <span class='px-1'> <i class="bi bi-thermometer-high"></i>:${temp1}°C</span> 
           <span class='px-1'> Now:${temp}°C </span> 
           <span class='px-1'> <i class="bi bi-thermometer-low"></i>:${temp2}°C </span>
           </h2>
-
           <div class='d-flex justify-content-center align-items-center'>
           <img class='shadow-lg rounded-circle'  src="https://openweathermap.org/img/wn/${
             data.weather[0].icon
@@ -82,11 +80,9 @@ const addWeatherToPage = (data) => {
   main.innerHTML = "";
   main.appendChild(weather);
 };
-
 function Ktoc(K) {
   return Math.floor(K - 273.15);
 }
-
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const city = search.value;
@@ -94,7 +90,6 @@ form.addEventListener("submit", (e) => {
     getWeatherByLocation(city);
   }
 });
-
 // Date and Time
 setInterval(myTimer, 1000);
 function myTimer() {
