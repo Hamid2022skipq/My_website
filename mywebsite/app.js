@@ -9,13 +9,40 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
+// nodemailer start
+// const nodemailer = require("nodemailer");
+
+// const transporter = nodemailer.createTransport({
+//   service: "gmail",
+//   auth: {
+//     user: "hamidalinwl0@gmail.com",
+//     pass: "kahjvamcfxyssfcs",
+//   },
+// });
+
+// const mailOptions = {
+//   from: "example@gmail.com",
+//   to: "example@example.com",
+//   subject: "Nodemailer Test",
+//   html: "Test <button>sending</button> Gmail using Node JS",
+// };
+
+// transporter.sendMail(mailOptions, function (error, info) {
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     console.log("Email sent: " + info.response);
+//   }
+// });
+//End here
+
 app.post("/", (req, res) => {
-  // console.log(req.body);
+  console.log(req.body);
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
       user: "hamidalinwl0@gmail.com",
-      pass: "kahjvamcfxyssfcs",
+      pass: "jazrwspmchxrcrvc",
     },
   });
   const mailOptions = {
@@ -26,10 +53,10 @@ app.post("/", (req, res) => {
   };
   transporter.sendMail(mailOptions, (err, info) => {
     if (err) {
-      // console.log(err);
-      res.send("error");
+      console.log(err);
+      res.send("error" + err);
     } else {
-      // console.log("Email send: " + info.response);
+      console.log("Email send: " + info.response);
       res.send("success");
     }
   });
