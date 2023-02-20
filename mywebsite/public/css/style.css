@@ -242,6 +242,8 @@ a.effect-shine:hover {
     top: 29px;
     left: 49px;
     height: 80px;
+    width: 80px;
+    object-fit: cover;
   }
   .main_para {
     position: absolute;
@@ -275,10 +277,12 @@ a.effect-shine:hover {
     top: 29px;
     left: 49px;
     height: 80px;
+    width: 80px;
+    object-fit: cover;
   }
   .main_para {
     position: absolute;
-    top: 121px;
+    top: 115px;
     left: 13px;
     font-size: 16px;
     margin: 0px 25px;
@@ -304,6 +308,8 @@ a.effect-shine:hover {
   }
   .main_subImage {
     height: 162px;
+    width: 162px;
+    object-fit: cover;
   }
   .main_para {
     font-size: 21px;
@@ -328,7 +334,9 @@ a.effect-shine:hover {
   }
   .main_subImage {
     height: 162px;
-    box-sizing: border-box;
+    width: 162px;
+    object-fit: cover;
+    /* box-sizing: border-box; */
   }
   .main_para {
     box-sizing: border-box;
@@ -354,6 +362,8 @@ a.effect-shine:hover {
   }
   .main_subImage {
     height: 162px;
+    width: 162px;
+    object-fit: cover;
   }
   .main_para {
     font-size: 21px;
