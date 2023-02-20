@@ -263,6 +263,9 @@ a.effect-shine:hover {
   .map {
     height: 250px;
   }
+  .weather_input {
+    width: 220px;
+  }
 }
 /* ipad and tablets */
 @media (min-width: 481px) and (max-width: 767px) {
