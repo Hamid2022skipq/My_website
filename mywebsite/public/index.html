@@ -44,6 +44,13 @@
     />
     <!--Custom Css -->
     <link rel="stylesheet" href="/css/style.css" />
+    <!-- Simply notify -->
+    <!--Simply notify CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.css"
+    />
+
     <title>Hamid Ali</title>
   </head>
   <body>
@@ -437,11 +444,14 @@
       <h1 class="d-block h1 my-5 position-relative">
         <a href="#Achivements" class="text-center text-secondary d-block">
           <div
-            class="container1 my-2 hover-underline-animation border border-white"
+            class="d-flex justify-content-center align-items-centermy-2 border border-white"
           >
-            <div class="upper">Achivements <i class="bi bi-check-all"></i></div>
-            <div class="lower">Achivements <i class="bi bi-check-all"></i></div>
-            <div class="inside">Certificates</div>
+            <p
+              class="Skill_ani fs-2 text-shadow"
+              style="border-bottom: 5px solid #f06407"
+            >
+              Achivements
+            </p>
           </div>
         </a>
       </h1>
@@ -597,7 +607,7 @@
           />
           <div class="card-body">
             <h5 class="card-title fw-light row justify-content-between">
-              <span class="col-8"> Version Control </span>
+              <span class="col-8">Git & Github</span>
               <span class="fs-6 col-4">100/100</span>
             </h5>
             <a
@@ -897,6 +907,7 @@
             <button
               style="letter-spacing: 1px"
               type="submit"
+              id="submit"
               class="btn font_tit btn-outline-secondary fs-5 rounded-0 mb-3 px-3 fw-bold text-uppercase"
             >
               Submit
@@ -1072,22 +1083,6 @@
 
     <!-- Custom JavaScript -->
     <script>
-      // // Alert for mobile device
-      // var width = window.innerWidth;
-      // function devicewidth() {
-      //   if (width <= 480) {
-      //     document.getElementById(
-      //       "alert"
-      //     ).innerHTML = `<div class="alert  mb-0 border-white alert-warning alert-dismissible fade show" role="alert">
-      //     <strong>&#128075;, </strong><span class='fs-6'> Optimal viewing on a tablet, laptop, or PC. Click 'cross' on your device too. </span>
-      //     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-      //   </div>`;
-      //   } else {
-      //     document.getElementById("alert").innerHTML = `<div class='m-0 p-0'></div>`;
-      //   }
-      // }
-      // devicewidth();
-
       document.getElementById("icon").onclick = function () {
         this.classList.toggle("navbar-toggler-icon");
         this.classList.toggle("bi-arrow-right");
@@ -1130,9 +1125,8 @@
         // console.log(typeof data.cod);
         if (data.cod == "404") {
           weather.innerHTML = `
-          <div class ='d-flex text-white justify-content-center align-items-center flex-column my-2'>
-          <h6>City not found</h6><h6>please check spelling</h6><div class=" mt-3 fs-6 spinner-border text-danger" role="status">
-        </div></div>`;
+          <div class =' d-flex text-white justify-content-center align-items-center flex-column my-2'>
+          <h6 class='fs-4'>City not found</h6><h6 class='fs-6'>Please check spelling</h6><div class="lds-dual-ring"></div></div>`;
           main.innerHTML = "";
           main.appendChild(weather);
           return;
@@ -1189,21 +1183,27 @@
           subject: subject.value,
           message: message.value,
         };
+
         let xhr = new XMLHttpRequest();
         xhr.open("POST", "/");
         xhr.setRequestHeader("content-type", "application/json");
         xhr.onload = function () {
-          console.log(xhr.responseText);
+          // console.log(xhr.responseText);
+
           if (xhr.responseText == "success") {
-            alert("Email sent");
+            alert("Email sent successfully");
             Fname.value = "";
             email.value = "";
             subject.value = "";
             message.value = "";
           } else {
             alert(
-              `Something went wrong! use liveChat or other methods,E-mail at hamidalinwl0@gmail.com `
+              "Sorry post method not support or email at hamidalinwl0@gmail.com"
             );
+            Fname.value = "";
+            email.value = "";
+            subject.value = "";
+            message.value = "";
           }
         };
         xhr.send(JSON.stringify(formData));
@@ -1248,6 +1248,7 @@
         console.log(`Server running on port ${PORT}`);
       });
     </script>
+
     <!-- Bootstrap 5.3 JavaScript -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
