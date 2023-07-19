@@ -1146,20 +1146,12 @@
       async function getWeatherByLocation(city) {
         const response = await fetch(url(city));
         const Data = await response.json();
-        // console.log(Data);
         return addWeatherToPage(Data);
       }
       const addWeatherToPage = (data) => {
         const temp = Ktoc(data?.main?.temp);
-        const temp1 = Ktoc(data?.main?.temp_max);
-        const temp2 = Ktoc(data?.main?.temp_min);
-        // const sunrise = new Date(data?.sys?.sunrise * 1000)
-        //   .toISOString()
-        //   .slice(11, 19);
-        // const sunset = new Date(data?.sys?.sunset * 1000).toISOString().slice(11, 19);
         const weather = document.createElement("div");
         weather.classList.add("weather");
-        // console.log(typeof data.cod);
         if (data.cod == "404") {
           weather.innerHTML = `
           <div class =' d-flex text-white justify-content-center align-items-center flex-column my-2'>
@@ -1171,15 +1163,21 @@
         weather.innerHTML = `
                 <div class='d-flex flex-column justify-content-between align-items-center'>
                 <h2 class='d-flex text-white justify-content-center align-items-center mt-5'>
-                <span class='px-1'> <i class="bi bi-thermometer-high"></i>:${temp1}°C</span> 
-                <span class='px-1'> Now:${temp}°C </span> 
-                <span class='px-1'> <i class="bi bi-thermometer-low"></i>:${temp2}°C </span>
+                  <span class='px-1 text-capitalize'>${
+                    search.value
+                  }<sup class='fs-6'>${data.sys.country}</sup> </span> 
+                
+                <span class='px-1'> <i class="bi bi-thermometer-high"></i> : ${temp}<sup class='fs-6'>°C</sup> </span> 
+                
+                <span class='px-1'> <i class="bi bi-wind"></i> : ${Math.round(
+                  data.wind.speed * 3.6
+                )}<span class='fs-6'> Km/h</span></span> 
                 </h2>
                 <div class='d-flex justify-content-center align-items-center'>
                 <img class='shadow-lg rounded-circle'  src="https://openweathermap.org/img/wn/${
                   data.weather[0].icon
                 }@2x.png"/>
-                <h3 class='mx-2'>Sky : ${
+                <h3 class='mx-2'> : ${
                   data.weather[0].description.charAt(0).toUpperCase() +
                   data.weather[0].description.slice(1)
                 }</h3>
