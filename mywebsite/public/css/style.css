@@ -98,85 +98,7 @@ a.effect-shine:hover {
   }
 }
 /* TEXT Split and Reveal Animation */
-.container1 {
-  width: 9.25em;
-  height: 30px;
-  font-size: 24;
-  font-family: sans-serif;
-  position: relative;
-}
-.container1 div {
-  position: absolute;
-  left: 0;
-  text-transform: uppercase;
-  width: 100%;
-  display: block;
-  text-align: center;
-}
-.upper {
-  top: 0;
-  height: 52.5%;
-  color: rgb(254, 254, 254);
-  overflow: hidden;
-  z-index: 3;
-  animation: moveUp 1.5s ease-in-out 1;
-  background-color: #010101;
-}
-.lower {
-  bottom: 0;
-  height: 100%;
-  background: linear-gradient(180deg, #020202 52.5%, rgb(255, 255, 255) 52.5%);
-  color: black;
-  background-clip: text;
-  -webkit-background-clip: text;
-  z-index: 1;
-  animation: moveDown 1.5s ease-in-out 1;
-}
-.inside {
-  position: absolute;
-  top: 40%;
-  transform: translateY(-40%);
-  text-align: center;
-  z-index: 2;
-  font-size: 1rem;
-  color: #dc143c;
-}
-@keyframes moveUp {
-  0%,
-  100% {
-    top: 0;
-  }
-  50%,
-  70% {
-    top: -45px;
-  }
-}
-@keyframes moveDown {
-  0%,
-  100% {
-    top: 0;
-  }
-  50%,
-  70% {
-    top: 30px;
-  }
-}
-@media (max-width: 424px) {
-  .container1 {
-    font-size: 2rem;
-  }
-  .inside {
-    font-size: 0.75rem;
-  }
-}
-@media (max-width: 320px) {
-  .container1 {
-    font-size: 1.5rem;
-  }
-  .inside {
-    font-size: 0.5rem;
-  }
-}
+
 /* Skill Animation */
 @import url("https://fonts.googleapis.com/css?family=Cairo");
 .title1 {
@@ -265,6 +187,11 @@ a.effect-shine:hover {
   .weather_input {
     width: 220px;
   }
+  .search_width {
+    width: 123px;
+    height: 45px;
+    overflow: auto;
+  }
 }
 /* ipad and tablets */
 @media (min-width: 481px) and (max-width: 767px) {
@@ -300,6 +227,11 @@ a.effect-shine:hover {
   .map {
     height: 250px;
   }
+  .search_width {
+    width: 160px;
+    height: 45px;
+    overflow: auto;
+  }
 }
 /* small screen laptop */
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -325,6 +257,11 @@ a.effect-shine:hover {
   }
   .map {
     height: 364px;
+  }
+  .search_width {
+    width: 160px;
+    height: 45px;
+    overflow: auto;
   }
 }
 @media (min-width: 1025px) and (max-width: 1200px) {
@@ -355,6 +292,11 @@ a.effect-shine:hover {
   .map {
     height: 364px;
   }
+  .search_width {
+    width: 160px;
+    height: 45px;
+    overflow: auto;
+  }
 }
 @media (min-width: 1201px) {
   .main_img {
@@ -380,6 +322,11 @@ a.effect-shine:hover {
   }
   .map {
     height: 400px;
+  }
+  .search_width {
+    width: 160px;
+    height: 45px;
+    overflow: auto;
   }
 }
 /* Weahter App Css */
@@ -419,4 +366,19 @@ input:focus {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.search_width::-webkit-scrollbar {
+  display: none;
+}
+body::-webkit-scrollbar {
+  width: 6px;
+}
+body::-webkit-scrollbar-track {
+  background: rgb(213, 241, 227);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 255, 255);
+  border-left: 2px solid blue;
+  border-right: 2px solid red;
 }
