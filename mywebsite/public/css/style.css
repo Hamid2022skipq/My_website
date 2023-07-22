@@ -382,3 +382,6 @@ body::-webkit-scrollbar-thumb {
   border-left: 2px solid blue;
   border-right: 2px solid red;
 }
+#myRange {
+  accent-color: red;
+}
